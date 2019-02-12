@@ -5,11 +5,4 @@ RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
 
 RUN apt-get -y install zip unzip git
 
-ENV COMPOSER_HOME /composer
-ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
-ENV COMPOSER_ALLOW_SUPERUSER 1
-RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
-
-COPY composer.json /var/www
-
 WORKDIR /var/www
